@@ -18,3 +18,11 @@ mouse_trigger {
   input: MOUSE_BUTTON_RIGHT
   action: "fairy_right"
 }
+mouse_trigger {
+  input: MOUSE_WHEEL_UP
+  action: "fairy_vol_up"
+}
+mouse_trigger {
+  input: MOUSE_WHEEL_DOWN
+  action: "fairy_vol_down"
+}
