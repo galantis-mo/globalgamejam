@@ -1,6 +1,6 @@
 components {
   id: "pikachu_control"
-  component: "/scripts/player_fox_control.script"
+  component: "/scripts/fox/player_fox_control.script"
   position {
     x: 0.0
     y: 0.0

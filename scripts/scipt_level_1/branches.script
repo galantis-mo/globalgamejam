@@ -1,5 +1,5 @@
 function init(self)
-	BRANCH_ID = go.get_id()
+	BRANCHES_ID = go.get_id()
 	self.spawn_position = go.get_position()
 end
 
