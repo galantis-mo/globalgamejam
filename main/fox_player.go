@@ -13,21 +13,6 @@ components {
     w: 1.0
   }
 }
-components {
-  id: "jump"
-  component: "/assests/sound/sound_effect/jump_1.sound"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
 embedded_components {
   id: "collisionobject"
   type: "collisionobject"
@@ -110,11 +95,7 @@ embedded_components {
   "group: \"characters\"\n"
   "mask: \"boundary\"\n"
   "mask: \"pushable\"\n"
-<<<<<<< HEAD
-  "mask: \"breakable\"\n"
-=======
   "mask: \"diggable\"\n"
->>>>>>> 41d9d16673d2f6ec6932ac53646031986447ed8c
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
