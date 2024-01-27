@@ -1,7 +1,5 @@
 function init(self)
 	go.property("deleting", false)
-	go.set(".", "position.x", -800)
-	go.set(".", "position.y", -800)
 end
 
 function final(self)

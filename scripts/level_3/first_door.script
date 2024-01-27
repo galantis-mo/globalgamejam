@@ -12,7 +12,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("open") then
 		if self.deleting == false then
 			self.deleting = true
-			msg.post(hash("/laser_beam_1"), hash("beam_1"))
+			msg.post(hash("/laser_beam_1"), hash("kill"))
 			go.delete()
 		end
 	end
