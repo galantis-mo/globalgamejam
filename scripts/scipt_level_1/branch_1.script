@@ -1,7 +1,6 @@
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	BRANCH_ID = go.get_id()
+	self.spawn_position = go.get_position()
 end
 
 function final(self)
