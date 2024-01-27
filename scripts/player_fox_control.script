@@ -18,6 +18,7 @@ local DOUBLEJUMP_TAKEOFF_SPEED = 200
 -- pre-hashing ids improves performance
 local CONTACT_POINT_RESPONSE = hash("contact_point_response")
 local GROUND = hash("ground")
+local PLATFORM = hash("platform_collision")
 local RESPAWMN = hash("respawn")
 local ENEMY = hash("enemy")
 
@@ -190,17 +191,25 @@ local function handle_obstacle_contact(self, normal, distance)
 	if normal.y < -NORMAL_THRESHOLD then
 		self.velocity.y = 0
 	end
+
+	
 end
 
 function on_message(self, message_id, message, sender)
 	-- check if we received a contact point message
-	if message_id == CONTACT_POINT_RESPONSE and message.other_id == FLOOR_ID then
+	if message_id == CONTACT_POINT_RESPONSE and message.other_id == FLOOR_ID  then
 		-- check that the object is something we consider an obstacle
 			print(sender)
 			pprint("normal"..message.normal, "distance"..message.distance)
 			handle_obstacle_contact(self, message.normal, message.distance)
 		--elseif message.group == RESPAWMN or message.group == ENEMY then
 		--go.set_position(self.spawn_position)
+		
+	end
+	if message_id == PLATFORM then
+		print("JE TOUCHE UNE PLATEFORME :")
+		pprint("normal"..message.normal, "distance"..message.distance)
+		handle_obstacle_contact(self, message.normal, message.distance)
 	end
 end
 
