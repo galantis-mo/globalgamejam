@@ -10,6 +10,10 @@ key_trigger {
   input: KEY_SPACE
   action: "fox_jump"
 }
+key_trigger {
+  input: KEY_Z
+  action: "fox_up"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "fairy_left"
