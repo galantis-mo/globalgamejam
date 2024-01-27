@@ -1,6 +1,6 @@
 function init(self)
 	-- Add initialization code here
-	FLOOR_ID = go.get_id()
+	BROKEN_BRANCH_ID = go.get_id()
 	self.spawn_position = go.get_position()
 end
 

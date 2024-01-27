@@ -1,5 +1,5 @@
 function init(self)
-	DEAD_TREE_ID = go.get_id()
+	FLOOR_ID = go.get_id()
 end
 
 function final(self)
