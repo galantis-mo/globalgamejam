@@ -5,15 +5,15 @@
 local MAX_GROUND_SPEED = 800
 local MAX_AIR_SPEED = 800
 -- max fall speed
-local MAX_FALL_SPEED = 500
+local MAX_FALL_SPEED = 800
 
 -- gravity pulling the player down in pixel units
-local GRAVITY = -500
+local GRAVITY = -1500
 -- take-off speed when jumping in pixel units
-local JUMP_TAKEOFF_SPEED = 240
+local JUMP_TAKEOFF_SPEED = 500
 local DOUBLEJUMP_TAKEOFF_SPEED = 200
 -- push-back when shooting
-local RECOIL = 500
+--local RECOIL = 500
 
 -- pre-hashing ids improves performance
 local CONTACT_POINT_RESPONSE = hash("contact_point_response")
