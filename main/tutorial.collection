@@ -3,8 +3,8 @@ instances {
   id: "fox_player"
   prototype: "/main/fox_player.go"
   position {
-    x: 928.0
-    y: 663.0
+    x: 993.0
+    y: 597.0
     z: 0.5
   }
   rotation {
@@ -14,17 +14,17 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.52
+    y: 0.52
+    z: 0.52
   }
 }
 instances {
   id: "fairy_player"
   prototype: "/main/fairy_player.go"
   position {
-    x: 753.0
-    y: 1022.0
+    x: 1579.0
+    y: 1115.0
     z: 0.0
   }
   rotation {
@@ -34,9 +34,9 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.058308
+    y: 0.058308
+    z: 0.058308
   }
 }
 scale_along_z: 0
