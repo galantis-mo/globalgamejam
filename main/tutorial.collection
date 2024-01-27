@@ -3,8 +3,8 @@ instances {
   id: "fox_player"
   prototype: "/main/fox_player.go"
   position {
-    x: 365.0
-    y: 258.0
+    x: 298.0
+    y: 388.0
     z: 0.0
   }
   rotation {
@@ -84,7 +84,7 @@ embedded_instances {
   id: "boundary"
   data: "components {\n"
   "  id: \"floorBoundary\"\n"
-  "  component: \"/scripts/floorBoundary.script\"\n"
+  "  component: \"/scripts/boundary/floorBoundary.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -245,7 +245,7 @@ embedded_instances {
   id: "cursor"
   data: "components {\n"
   "  id: \"cursor\"\n"
-  "  component: \"/scripts/cursor.script\"\n"
+  "  component: \"/scripts/fairy/cursor.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -282,7 +282,7 @@ embedded_instances {
   id: "merlinsTomb"
   data: "components {\n"
   "  id: \"pushable\"\n"
-  "  component: \"/scripts/pushable.script\"\n"
+  "  component: \"/scripts/fox/pushable.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -383,7 +383,7 @@ embedded_instances {
   id: "key"
   data: "components {\n"
   "  id: \"grabbable\"\n"
-  "  component: \"/scripts/grabbable.script\"\n"
+  "  component: \"/scripts/fairy/grabbable.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -468,8 +468,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 224.0
-    y: 745.0
+    x: 198.0
+    y: 791.0
     z: 0.0
   }
   rotation {
@@ -485,17 +485,19 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "door"
+  id: "door_closed"
   data: "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"\\\"\\n"
-  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
   "mass: 0.0\\n"
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
-  "group: \\\"default\\\"\\n"
-  "mask: \\\"default\\\"\\n"
+  "group: \\\"boundary\\\"\\n"
+  "mask: \\\"characters\\\"\\n"
+  "mask: \\\"pushable\\\"\\n"
+  "mask: \\\"grabbable\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
@@ -588,8 +590,8 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_SPHERE\\n"
   "    position {\\n"
-  "      x: 5.0\\n"
-  "      y: 6.0\\n"
+  "      x: 0.0\\n"
+  "      y: 0.0\\n"
   "      z: 0.0\\n"
   "    }\\n"
   "    rotation {\\n"
@@ -624,7 +626,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/images/tutorial.atlas\\\"\\n"
-  "default_animation: \\\"16-9-NV0-tuto-porte-fermer\\\"\\n"
+  "default_animation: \\\"recorder\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -640,15 +642,15 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "  scale {\n"
-  "    x: 0.1\n"
-  "    y: 0.1\n"
-  "    z: 0.1\n"
+  "    x: 0.2\n"
+  "    y: 0.2\n"
+  "    z: 0.2\n"
   "  }\n"
   "}\n"
   ""
   position {
-    x: 1729.0
-    y: 167.0
+    x: 1646.0
+    y: 172.0
     z: 0.0
   }
   rotation {
@@ -690,6 +692,46 @@ embedded_instances {
     x: 0.0
     y: 0.0
     z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "door_open"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/images/tutorial.atlas\\\"\\n"
+  "default_animation: \\\"16-9-NV0-tuto-porte-ouverte\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.9\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 956.0
+    y: 255.0
+    z: 0.0
   }
   rotation {
     x: 0.0
