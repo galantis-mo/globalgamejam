@@ -13,6 +13,21 @@ components {
     w: 1.0
   }
 }
+components {
+  id: "jump"
+  component: "/assests/sound/sound_effect/jump_1.sound"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
 embedded_components {
   id: "collisionobject"
   type: "collisionobject"
