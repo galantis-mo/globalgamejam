@@ -1,6 +1,7 @@
 function init(self)
 	go.property("deleting", false)
-	go.set_position([-800, -800])
+	go.set(".", "position.x", -800)
+	go.set(".", "position.y", -800)
 end
 
 function final(self)
@@ -11,7 +12,8 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("beam_3") then
-
+		go.set(".", "position.x", 0)
+		go.set(".", "position.y", 0)
 	end
 	if message_id == hash("kill") then
 		if self.deleting == false then
