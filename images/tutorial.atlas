@@ -26,6 +26,10 @@ images {
   image: "/images/source/terrain_dig.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/images/source/tutorial/16-9-NV0-tuto-couille.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 margin: 0
 extrude_borders: 3
 inner_padding: 0
