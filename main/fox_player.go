@@ -39,6 +39,8 @@ embedded_components {
   "group: \"characters\"\n"
   "mask: \"boundary\"\n"
   "mask: \"pushable\"\n"
+  "mask: \"diggable\"\n"
+  "mask: \"default\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
@@ -108,7 +110,11 @@ embedded_components {
   "group: \"characters\"\n"
   "mask: \"boundary\"\n"
   "mask: \"pushable\"\n"
+<<<<<<< HEAD
   "mask: \"breakable\"\n"
+=======
+  "mask: \"diggable\"\n"
+>>>>>>> 41d9d16673d2f6ec6932ac53646031986447ed8c
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
