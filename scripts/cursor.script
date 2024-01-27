@@ -1,0 +1,46 @@
+--[[  Defold Tutorial # 5:  Physics Engine Techniques
+=============================================================================================
+
+Lua Script File:  	cursor.script
+
+Script Summary: 	This script performs the following:
+
+1 - Each frame, it updates the cursorLabel with the current cursor location
+2 - Each frame, it posts user instructions and counter tallies on the screen
+3 - Upon a user click/touch - it spawns a crate game object at the cursor location
+
+=============================================================================================
+--]]
+
+
+function init(self)
+	-- Input Focus is acquired for the cursor
+	msg.post(".", "acquire_input_focus")
+end	
+
+
+-- ------------------------------------------------------------------------------------------
+
+function update(self, dt)
+	local cursorPos = go.get_position()
+	msg.post("/fairy_player", hash("move bitch"), {pos = cursorPos})
+end
+
+-- ------------------------------------------------------------------------------------------
+
+function on_input(self, action_id, action)
+
+	-- Each frame - update the Defold cursor Game Object position to be the same as the 
+	-- current position of the machine cursor
+	go.set_position(vmath.vector3(action.x, action.y, 0))
+
+	-- When the user clicks the mouse button/touches screen, spawn a new crate at that location
+	if action.pressed then
+		local cursorPos = go.get_position()
+		
+		msg.post("/fairy_player", hash("do something bitch"))
+	end
+
+end
+
+-- ------------------------------------------------------------------------------------------

@@ -21,10 +21,9 @@ local GROUND = hash("ground")
 local RESPAWMN = hash("respawn")
 local ENEMY = hash("enemy")
 
-local LEFT = hash("left")
-local RIGHT = hash("right")
-local JUMP = hash("jump")
-local FIRE = hash("fire")
+local LEFT = hash("fox_left")
+local RIGHT = hash("fox_right")
+local JUMP = hash("fox_jump")
 
 local ANIM_WALK = hash("player_walk")
 local ANIM_IDLE = hash("player_idle")
@@ -213,7 +212,7 @@ local function jump(self)
 		-- set take-off speed
 		self.velocity.y = JUMP_TAKEOFF_SPEED
 		-- play animation
-		play_animation(self, ANIM_JUMP)
+		--play_animation(self, ANIM_JUMP)
 		self.ground_contact = false
 		-- compress and stretch player for visual "juice"
 		squish()
