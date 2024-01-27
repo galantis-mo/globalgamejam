@@ -1,0 +1,24 @@
+local DIGGING = hash("fox_dig")
+local TRIGGER_RESPONSE = hash("trigger_response")
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.is_digged = false
+	self.in_contact = false
+	msg.post("#hidden", "enable")
+	msg.post("#display", "disable")
+end
+
+function on_message(self, message_id, message, sender)
+	if (message_id == TRIGGER_RESPONSE and message.other_id == hash("/fox_player")) then
+		self.in_contact = message.enter
+	end
+end
+
+function on_input(self, action_id, action)
+	if (action_id == DIGGING and (not self.is_digged) and self.in_contact and action.pressed) then
+		self.is_digged = true
+		msg.post("#hidden", "disable")
+		msg.post("#display", "enable")
+	end
+end

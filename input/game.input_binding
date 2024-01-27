@@ -14,6 +14,14 @@ key_trigger {
   input: KEY_Z
   action: "fox_up"
 }
+key_trigger {
+  input: KEY_E
+  action: "fox_dig"
+}
+key_trigger {
+  input: KEY_S
+  action: "fox_down"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "fairy_left"

@@ -1,0 +1,12 @@
+function init(self)
+	BRANCHES_ID = go.get_id()
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+	if message_id == hash("trigger_response") and message.other_id == hash("/fox_player") and message_id then
+		msg.post("/broken_branch", hash("pickable_fairy"))
+	end
+end

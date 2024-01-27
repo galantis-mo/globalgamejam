@@ -19,6 +19,7 @@ local DOUBLEJUMP_TAKEOFF_SPEED = 200
 local CONTACT_POINT_RESPONSE = hash("contact_point_response")
 local GROUND = hash("ground")
 local PLATFORM = hash("platform_collision")
+local DOOR = hash("door_collision")
 local RESPAWMN = hash("respawn")
 local ENEMY = hash("enemy")
 
@@ -65,8 +66,8 @@ local function play_animation(self, anim)
 end
 
 local function squish()
-	go.animate("visuals", "scale.x", go.PLAYBACK_ONCE_PINGPONG, 0.8, go.EASING_INOUTQUAD, 0.6)
-	go.animate("visuals", "scale.y", go.PLAYBACK_ONCE_PINGPONG, 1.2, go.EASING_INOUTQUAD, 0.6)
+	go.animate("#sprite", "scale.x", go.PLAYBACK_ONCE_PINGPONG, 0.8, go.EASING_INOUTQUAD, 0.6)
+	go.animate("#sprite", "scale.y", go.PLAYBACK_ONCE_PINGPONG, 1.2, go.EASING_INOUTQUAD, 0.6)
 end
 
 local function update_animations(self)
@@ -197,25 +198,24 @@ end
 
 function on_message(self, message_id, message, sender)
 	-- check if we received a contact point message
-	if message_id == CONTACT_POINT_RESPONSE and message.other_id == FLOOR_ID  then
+	if message_id == CONTACT_POINT_RESPONSE  then
 		-- check that the object is something we consider an obstacle
 		-- check that the object is something we consider as floor
-		print(sender)
-		pprint("normal"..message.normal, "distance"..message.distance)
+		--print(sender)
+		--pprint("normal"..message.normal, "distance"..message.distance)
 		handle_obstacle_contact(self, message.normal, message.distance)
 		--elseif message.group == RESPAWMN or message.group == ENEMY then
 		--go.set_position(self.spawn_position)
-	end
-	if message_id == CONTACT_POINT_RESPONSE and message.other_id == WALL_ID  then
-		-- check that the object is something we consider as wall
-		print(sender)
-		pprint("normal"..message.normal, "distance"..message.distance)
-		handle_obstacle_contact(self, message.normal, message.distance)
 	end
 	if message_id == PLATFORM then
 		print("JE TOUCHE UNE PLATEFORME :")
 		pprint("normal"..message.normal, "distance"..message.distance)
 		handle_obstacle_contact(self, message.normal, message.distance)
+	end
+	if message_id == DOOR then
+		if not message.open then
+			handle_obstacle_contact(self, message.normal, message.distance)
+		end
 	end
 end
 
@@ -224,6 +224,7 @@ local function jump(self)
 	-- only allow jump from ground
 	-- (extend this with a counter to do things like double-jumps)
 	if self.ground_contact then
+		sound.play("#jump")
 		-- set take-off speed
 		self.velocity.y = JUMP_TAKEOFF_SPEED
 		-- play animation
@@ -231,10 +232,6 @@ local function jump(self)
 		self.ground_contact = false
 		-- compress and stretch player for visual "juice"
 		squish()
-		-- allow double jump if still moving up
-	elseif not self.double_jump then
-		self.velocity.y = DOUBLEJUMP_TAKEOFF_SPEED
-		self.double_jump = true
 	end
 	-- add some particles 
 	--particlefx.play("#jump")
