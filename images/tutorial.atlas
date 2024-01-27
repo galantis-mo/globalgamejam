@@ -1,5 +1,21 @@
 images {
-  image: "/images/unsplash_forest_sebastian_unrau.jpg"
+  image: "/images/source/tutorial/16-9-NV0-tuto-frontground.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/tutorial/16-9-NV0-tuto-porte-fermer.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/tutorial/16-9-NV0-tuto-porte-ouverte.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/tutorial/16-9-NV0-tuto.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/tutorial/key.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0
