@@ -1,7 +1,7 @@
+
+
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	TRIGGER_ID_1 = go.get_id()
 end
 
 function final(self)
@@ -14,7 +14,7 @@ function on_message(self, message_id, message, sender)
 	-- Add message-handling code here
 	-- Learn more: https://defold.com/manuals/message-passing/
 	-- Remove this function if not needed
-	if message_id == CONTACT_POINT_RESPONSE and message.other_id == fairy_player then
-		msg.post(first_door, open)
+	if message_id == hash("trigger_response") and message.other_id == hash("/fairy_player") then
+		msg.post("/first_door", hash("open"))
 	end
 end
