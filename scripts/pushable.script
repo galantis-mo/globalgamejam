@@ -1,0 +1,44 @@
+local CONTACT_POINT_RESPONSE = hash("contact_point_response")
+local TRIGGER_RESPONSE = hash("trigger_response")
+
+local TO_PUSH = hash("fox_up")
+
+function init(self)
+	-- Input Focus is acquired for the cursor
+	msg.post(".", "acquire_input_focus")
+	self.in_contact = false
+	self.is_pulled = false
+	self.position = go.get_position()
+end	
+
+function fixed_update(self, dt)
+	if (self.in_contact and self.is_pulled) then
+		go.animate(".", "position.x", go.PLAYBACK_ONCE_FORWARD, self.pos_pull.x, go.EASING_OUTCUBIC, 1)
+	end
+end
+		
+function on_message(self, message_id, message, sender)
+	-- follows the player
+	if message_id == hash("Move me") then
+		go.set_position(message.position)
+
+	-- We are maybe in contact with the fox
+	elseif (message_id == TRIGGER_RESPONSE and message.other_id == hash("/fox_player")) then
+		self.in_contact = message.enter
+
+	-- Get the position of the fox when we hit it
+	elseif (message_id == CONTACT_POINT_RESPONSE and message.other_id == hash("/fox_player")) then
+		self.pos_pull = go.get_position() - 10 * message.normal
+	end
+end
+
+-- Input lorsque l'on tire
+function on_input(self, action_id, action)
+	if (action_id == TO_PULL and self.in_contact) then
+		if (action.pressed) then
+			self.is_pulled = true
+		elseif (action.released) then
+			self.is_pulled = false
+		end
+	end
+end

@@ -14,7 +14,7 @@ function on_message(self, message_id, message, sender)
 		go.set_position(message.position)
 
 	-- We are in the hitbow of the player
-	elseif (message_id == TRIGGER_RESPONSE) then 
+	elseif (message_id == TRIGGER_RESPONSE and message.other_id == hash("/fairy_player")) then 
 		self.in_contact = message.enter
 	end
 end
