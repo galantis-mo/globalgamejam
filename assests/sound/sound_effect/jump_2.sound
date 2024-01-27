@@ -1,4 +1,4 @@
-sound: "/sounds/sources/Sound_effects/jump_2.wav"
+sound: "/assests/sound/sources/Sound_effects/jump_2.wav"
 looping: 0
 group: "master"
 gain: 1.0

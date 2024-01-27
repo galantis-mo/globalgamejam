@@ -1,4 +1,4 @@
-sound: "/assets/sounds/phaseJump1.ogg"
+sound: "/assests/sound/sources/Sound_effects/phaseJump1.ogg"
 looping: 0
 group: "master"
 gain: 1.0

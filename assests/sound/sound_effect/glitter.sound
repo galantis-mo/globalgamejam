@@ -1,4 +1,4 @@
-sound: "/sounds/sources/Sound_effects/glitter.wav"
+sound: "/assests/sound/sources/Sound_effects/glitter.wav"
 looping: 0
 group: "master"
 gain: 1.0

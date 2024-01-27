@@ -1,4 +1,4 @@
-sound: "/sounds/sources/Music/level_3.ogg"
+sound: "/assests/sound/sources/Music/level_3.ogg"
 looping: 0
 group: "master"
 gain: 1.0

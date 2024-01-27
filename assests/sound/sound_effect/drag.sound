@@ -1,4 +1,4 @@
-sound: "/sounds/sources/Sound_effects/dragging.wav"
+sound: "/assests/sound/sources/Sound_effects/dragging.wav"
 looping: 0
 group: "master"
 gain: 1.0

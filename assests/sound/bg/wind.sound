@@ -1,4 +1,4 @@
-sound: "/sounds/sources/Background/wind.ogg"
+sound: "/assests/sound/sources/Background/wind.ogg"
 looping: 0
 group: "master"
 gain: 1.0
