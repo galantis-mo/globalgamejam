@@ -81,110 +81,6 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "boundary"
-  data: "components {\n"
-  "  id: \"floorBoundary\"\n"
-  "  component: \"/scripts/floorBoundary.script\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "  property_decls {\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"collisionobject\"\n"
-  "  type: \"collisionobject\"\n"
-  "  data: \"collision_shape: \\\"\\\"\\n"
-  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
-  "mass: 0.0\\n"
-  "friction: 0.1\\n"
-  "restitution: 0.5\\n"
-  "group: \\\"default\\\"\\n"
-  "mask: \\\"default\\\"\\n"
-  "embedded_collision_shape {\\n"
-  "  shapes {\\n"
-  "    shape_type: TYPE_BOX\\n"
-  "    position {\\n"
-  "      x: 253.0\\n"
-  "      y: -20.0\\n"
-  "      z: 0.0\\n"
-  "    }\\n"
-  "    rotation {\\n"
-  "      x: 0.0\\n"
-  "      y: 0.0\\n"
-  "      z: 0.0\\n"
-  "      w: 1.0\\n"
-  "    }\\n"
-  "    index: 0\\n"
-  "    count: 3\\n"
-  "  }\\n"
-  "  shapes {\\n"
-  "    shape_type: TYPE_BOX\\n"
-  "    position {\\n"
-  "      x: 1847.0\\n"
-  "      y: -20.0\\n"
-  "      z: 0.0\\n"
-  "    }\\n"
-  "    rotation {\\n"
-  "      x: 0.0\\n"
-  "      y: 0.0\\n"
-  "      z: 0.0\\n"
-  "      w: 1.0\\n"
-  "    }\\n"
-  "    index: 3\\n"
-  "    count: 3\\n"
-  "  }\\n"
-  "  data: 250.0\\n"
-  "  data: 23.242878\\n"
-  "  data: 10.0\\n"
-  "  data: 250.0\\n"
-  "  data: 23.242878\\n"
-  "  data: 10.0\\n"
-  "}\\n"
-  "linear_damping: 0.0\\n"
-  "angular_damping: 0.0\\n"
-  "locked_rotation: false\\n"
-  "bullet: false\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
-    x: -3.0
-    y: 40.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
   id: "cursor"
   data: "components {\n"
   "  id: \"cursor\"\n"
@@ -223,7 +119,24 @@ embedded_instances {
 }
 embedded_instances {
   id: "dead_tree"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"dead_tree\"\n"
+  "  component: \"/scripts/scipt_level_1/dead_tree.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"/images/collision_shapes/tree_water_1.convexshape\\\"\\n"
@@ -294,13 +207,302 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "branch_1"
+  id: "water"
   data: "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"\\\"\\n"
-  "type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
-  "mass: 1.0\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"default\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: 1046.0\\n"
+  "      y: 0.0\\n"
+  "      z: 0.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "      x: 0.0\\n"
+  "      y: 0.0\\n"
+  "      z: 0.0\\n"
+  "      w: 1.0\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 553.39056\\n"
+  "  data: 22.626577\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "bullet: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "broken_branch"
+  data: "components {\n"
+  "  id: \"broken_branch\"\n"
+  "  component: \"/scripts/scipt_level_1/broken_branch.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"default\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: 2576.087\\n"
+  "      y: 1336.9565\\n"
+  "      z: 0.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "      x: 0.0\\n"
+  "      y: 0.0\\n"
+  "      z: 0.0\\n"
+  "      w: 1.0\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 1023.43396\\n"
+  "  data: 136.05356\\n"
+  "  data: 292.932\\n"
+  "}\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "bullet: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -146.0
+    y: 318.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.092
+    y: 0.092
+    z: 0.092
+  }
+}
+embedded_instances {
+  id: "branch_0"
+  data: "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/images/collision_shapes/branch.convexshape\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"default\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: 1061.2688\\n"
+  "      y: 724.9281\\n"
+  "      z: 0.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "      x: 0.0\\n"
+  "      y: 0.0\\n"
+  "      z: 0.54570246\\n"
+  "      w: 0.837979\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 250.0\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "bullet: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 162.0
+    y: 284.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.20967469
+    w: 0.9777712
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "branch_2"
+  data: "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"default\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: 50.0\\n"
+  "      y: 707.0\\n"
+  "      z: 0.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "      x: 0.0\\n"
+  "      y: 0.0\\n"
+  "      z: 0.0\\n"
+  "      w: 1.0\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 250.0\\n"
+  "  data: 10.0\\n"
+  "  data: 10.0\\n"
+  "}\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "bullet: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1672.0
+    y: 676.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.2880472
+    w: 0.9576162
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "branch_3"
+  data: "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/images/collision_shapes/branch.convexshape\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
   "group: \\\"default\\\"\\n"
@@ -362,13 +564,30 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "water"
-  data: "embedded_components {\n"
+  id: "boundaryFloor"
+  data: "components {\n"
+  "  id: \"floorBoundary\"\n"
+  "  component: \"/scripts/floorBoundary.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"\\\"\\n"
-  "type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
-  "mass: 1.0\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
   "group: \\\"default\\\"\\n"
@@ -377,8 +596,8 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      x: 1046.0\\n"
-  "      y: 20.0\\n"
+  "      x: 253.0\\n"
+  "      y: -20.0\\n"
   "      z: 0.0\\n"
   "    }\\n"
   "    rotation {\\n"
@@ -390,8 +609,27 @@ embedded_instances {
   "    index: 0\\n"
   "    count: 3\\n"
   "  }\\n"
-  "  data: 541.025\\n"
-  "  data: 22.626577\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: 1847.0\\n"
+  "      y: -20.0\\n"
+  "      z: 0.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "      x: 0.0\\n"
+  "      y: 0.0\\n"
+  "      z: 0.0\\n"
+  "      w: 1.0\\n"
+  "    }\\n"
+  "    index: 3\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 250.0\\n"
+  "  data: 23.242878\\n"
+  "  data: 10.0\\n"
+  "  data: 250.0\\n"
+  "  data: 23.242878\\n"
   "  data: 10.0\\n"
   "}\\n"
   "linear_damping: 0.0\\n"
@@ -414,71 +652,7 @@ embedded_instances {
   ""
   position {
     x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "broken_branch"
-  data: "components {\n"
-  "  id: \"broken_branch\"\n"
-  "  component: \"/scripts/broken_branch.script\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "  property_decls {\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"collisionobject\"\n"
-  "  type: \"collisionobject\"\n"
-  "  data: \"collision_shape: \\\"\\\"\\n"
-  "type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
-  "mass: 1.0\\n"
-  "friction: 0.1\\n"
-  "restitution: 0.5\\n"
-  "group: \\\"default\\\"\\n"
-  "mask: \\\"default\\\"\\n"
-  "linear_damping: 0.0\\n"
-  "angular_damping: 0.0\\n"
-  "locked_rotation: false\\n"
-  "bullet: false\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
+    y: 24.0
     z: 0.0
   }
   rotation {

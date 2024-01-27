@@ -1,6 +1,7 @@
 function init(self)
 	-- Add initialization code here
 	FLOOR_ID = go.get_id()
+	self.spawn_position = go.get_position()
 end
 
 local function breaking(self)
@@ -20,7 +21,7 @@ function on_message(self, message_id, message, sender)
 		print(sender)
 		pprint("normal"..message.normal, "distance"..message.distance)
 		breaking(self, message.normal, message.distance)
-		msg.post("/broken_branch", hash("pickable_broken_branch")
+		msg.post("/broken_branch", hash("pickable_broken_branch"))
 	end
 end
 
