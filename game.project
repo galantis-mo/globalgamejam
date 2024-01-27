@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /main/tutorial.collectionc
+main_collection = /main/level_2.collectionc
 
 [script]
 shared_state = 1
@@ -17,4 +17,5 @@ title = GlobalGameJam
 
 [physics]
 use_fixed_timestep = 1
+debug = 1
 
