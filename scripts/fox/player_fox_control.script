@@ -218,6 +218,7 @@ local function jump(self)
 	-- only allow jump from ground
 	-- (extend this with a counter to do things like double-jumps)
 	if self.ground_contact then
+		sound.play("#jump")
 		-- set take-off speed
 		self.velocity.y = JUMP_TAKEOFF_SPEED
 		-- play animation
@@ -225,10 +226,6 @@ local function jump(self)
 		self.ground_contact = false
 		-- compress and stretch player for visual "juice"
 		squish()
-		-- allow double jump if still moving up
-	elseif not self.double_jump then
-		self.velocity.y = DOUBLEJUMP_TAKEOFF_SPEED
-		self.double_jump = true
 	end
 	-- add some particles 
 	--particlefx.play("#jump")
