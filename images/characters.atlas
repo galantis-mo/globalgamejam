@@ -1,9 +1,9 @@
 images {
-  image: "/builtins/assets/images/logo/logo_256.png"
+  image: "/images/source/fairy.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/pikachu.png"
+  image: "/images/source/fox.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0

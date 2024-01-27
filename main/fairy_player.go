@@ -1,6 +1,6 @@
 components {
   id: "pikachu_control"
-  component: "/scripts/fairy_script.script"
+  component: "/scripts/player_fairy.script"
   position {
     x: 0.0
     y: 0.0
@@ -65,7 +65,7 @@ embedded_components {
   id: "sprite"
   type: "sprite"
   data: "tile_set: \"/images/characters.atlas\"\n"
-  "default_animation: \"pikachu\"\n"
+  "default_animation: \"f\\303\\251e\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
