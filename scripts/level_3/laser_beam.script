@@ -5,20 +5,17 @@ function init(self)
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	msg.post(hash("/laser_beam_2"), hash("beam_2"))
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("beam_2") then
+	if message_id == hash("beam_1") then
 		go.set(".", "position.x", 0)
 		go.set(".", "position.y", 0)
 	end
 	if message_id == hash("kill") then
 		if self.deleting == false then
 			self.deleting = true
-			msg.post(hash("/laser_beam_3"), hash("beam_3"))
 			go.delete()
 		end
 	end

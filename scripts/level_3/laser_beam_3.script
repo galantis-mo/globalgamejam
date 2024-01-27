@@ -11,14 +11,14 @@ function final(self)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("beam_2") then
+	if message_id == hash("beam_3") then
 		go.set(".", "position.x", 0)
 		go.set(".", "position.y", 0)
 	end
 	if message_id == hash("kill") then
 		if self.deleting == false then
 			self.deleting = true
-			msg.post(hash("/laser_beam_3"), hash("beam_3"))
+			msg.post(hash("/laser_beam_4"), hash("beam_4"))
 			go.delete()
 		end
 	end
