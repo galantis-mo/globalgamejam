@@ -14,9 +14,9 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 0.0432
-    y: 0.0432
-    z: 0.0432
+    x: 0.05
+    y: 0.05
+    z: 0.05
   }
 }
 instances {
@@ -34,9 +34,9 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 0.23224
+    x: 0.2
     y: 0.2
-    z: 1.0
+    z: 0.2
   }
 }
 scale_along_z: 0
@@ -45,14 +45,14 @@ embedded_instances {
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/images/level3.atlas\\\"\\n"
+  "  data: \"tile_set: \\\"/images/level_2.atlas\\\"\\n"
   "default_animation: \\\"unsplash_forest_sebastian_unrau\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 259.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -63,21 +63,21 @@ embedded_instances {
   "  }\n"
   "  scale {\n"
   "    x: 3.618881\n"
-  "    y: 1.0\n"
+  "    y: 1.446064\n"
   "    z: 1.0\n"
   "  }\n"
   "}\n"
   "embedded_components {\n"
   "  id: \"sprite1\"\n"
   "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/images/level3.atlas\\\"\\n"
+  "  data: \"tile_set: \\\"/images/level_2.atlas\\\"\\n"
   "default_animation: \\\"unsplash_forest_sebastian_unrau\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
   "    x: 1360.1715\n"
-  "    y: 1284.0\n"
+  "    y: 1838.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -112,7 +112,24 @@ embedded_instances {
 }
 embedded_instances {
   id: "floor_boundery"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"floorBoundary\"\n"
+  "  component: \"/scripts/floorBoundary.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"\\\"\\n"
@@ -282,7 +299,7 @@ embedded_instances {
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
   "      x: 1065.0\\n"
-  "      y: 7.0\\n"
+  "      y: 194.64102\\n"
   "      z: 0.0\\n"
   "    }\\n"
   "    rotation {\\n"
@@ -295,7 +312,7 @@ embedded_instances {
   "    count: 3\\n"
   "  }\\n"
   "  data: 95.4963\\n"
-  "  data: 640.0616\\n"
+  "  data: 2044.7018\\n"
   "  data: 100.94656\\n"
   "}\\n"
   "linear_damping: 0.0\\n"
@@ -329,7 +346,7 @@ embedded_instances {
   }
   scale3 {
     x: 1.0
-    y: 2.583151
+    y: 4.476633
     z: 1.0
   }
 }
@@ -349,8 +366,8 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      x: 1539.0\\n"
-  "      y: 173.0\\n"
+  "      x: 1447.0\\n"
+  "      y: -795.0036\\n"
   "      z: 0.0\\n"
   "    }\\n"
   "    rotation {\\n"
@@ -365,8 +382,8 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      x: 1447.0\\n"
-  "      y: -795.0036\\n"
+  "      x: 1614.0\\n"
+  "      y: -531.7574\\n"
   "      z: 0.0\\n"
   "    }\\n"
   "    rotation {\\n"
@@ -378,9 +395,28 @@ embedded_instances {
   "    index: 3\\n"
   "    count: 3\\n"
   "  }\\n"
-  "  data: 160.41687\\n"
-  "  data: 827.7583\\n"
-  "  data: 160.41687\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_BOX\\n"
+  "    position {\\n"
+  "      x: 1785.0\\n"
+  "      y: -279.04102\\n"
+  "      z: 0.0\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "      x: 0.0\\n"
+  "      y: 0.0\\n"
+  "      z: 0.0\\n"
+  "      w: 1.0\\n"
+  "    }\\n"
+  "    index: 6\\n"
+  "    count: 3\\n"
+  "  }\\n"
+  "  data: 40.289825\\n"
+  "  data: 305.7305\\n"
+  "  data: 243.19778\\n"
+  "  data: 267.45654\\n"
+  "  data: 43.79203\\n"
+  "  data: 243.19778\\n"
   "  data: 40.289825\\n"
   "  data: 305.7305\\n"
   "  data: 243.19778\\n"
