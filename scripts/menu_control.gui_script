@@ -5,7 +5,7 @@ local displayed = false
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	go.set_position(vmath.vector3(0, -1080, 0))
+	--go.set_position(vmath.vector3(0, -1080, 0))
 
 	-- start animations for all Level1 GUI nodes
 	anim.animateButton1(gui.get_node("exit"), 0.4)
