@@ -195,7 +195,7 @@ local function handle_obstacle_contact(self, normal, distance)
 	
 end
 
-unction on_message(self, message_id, message, sender)
+function on_message(self, message_id, message, sender)
 -- check if we received a contact point message
 if message_id == CONTACT_POINT_RESPONSE and message.other_id == FLOOR_ID  then
 	-- check that the object is something we consider an obstacle
