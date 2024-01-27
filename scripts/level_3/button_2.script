@@ -1,7 +1,6 @@
 
 
 function init(self)
-	TRIGGER_ID_2 = go.get_id()
 end
 
 function final(self)
