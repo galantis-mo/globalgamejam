@@ -7,7 +7,7 @@ key_trigger {
   action: "fox_left"
 }
 key_trigger {
-  input: KEY_SPACE
+  input: KEY_Z
   action: "fox_jump"
 }
 mouse_trigger {
