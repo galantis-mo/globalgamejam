@@ -9,11 +9,11 @@ function final(self)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == open then
+	if message_id == hash("open") then
 		if self.deleting == false then
 			self.deleting = true
 			go.delete()
-			msg.post(laser_beam_1, step_2)
+			--msg.post(hash("laser_beam_1"), step_2)
 		end
 	end
 end
