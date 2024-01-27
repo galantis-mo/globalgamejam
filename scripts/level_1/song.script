@@ -1,0 +1,3 @@
+function init(self)
+	song.play("/background#level_1")
+end

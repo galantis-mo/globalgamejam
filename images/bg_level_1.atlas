@@ -1,5 +1,9 @@
 images {
-  image: "/images/source/16-9-NV1.png"
+  image: "/images/source/LVL-1/16-9-NV1-background.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-1/16-9-NV1-woodstiks.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0
