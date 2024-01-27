@@ -1,6 +1,6 @@
 components {
   id: "fairy_control"
-  component: "/scripts/player_fairy.script"
+  component: "/scripts/fairy/player_fairy.script"
   position {
     x: 0.0
     y: 0.0
