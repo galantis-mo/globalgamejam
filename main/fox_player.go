@@ -22,7 +22,7 @@ embedded_components {
   "friction: 0.0\n"
   "restitution: 0.0\n"
   "group: \"characters\"\n"
-  "mask: \"boundery\"\n"
+  "mask: \"boundary\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
@@ -72,7 +72,7 @@ embedded_components {
   position {
     x: 0.0
     y: 0.0
-    z: 1.0
+    z: 0.5
   }
   rotation {
     x: 0.0
