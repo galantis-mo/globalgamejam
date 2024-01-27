@@ -93,6 +93,7 @@ embedded_components {
   "group: \"characters\"\n"
   "mask: \"boundary\"\n"
   "mask: \"pushable\"\n"
+  "mask: \"breakable\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"

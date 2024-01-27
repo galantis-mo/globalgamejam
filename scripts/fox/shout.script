@@ -1,0 +1,62 @@
+local CONTACT_POINT_RESPONSE = hash("contact_point_response")
+local TRIGGER_RESPONSE = hash("trigger_response")
+
+local TO_BREAK = hash("fox_down")
+
+function init(self)
+	-- Input Focus is acquired for the cursor
+	msg.post(".", "acquire_input_focus")
+	self.in_contact = false
+	self.position = go.get_position()
+end	
+
+function fixed_update(self, dt)
+	if (self.in_contact and self.is_pulled) then
+		go.animate(".", "position.x", go.PLAYBACK_ONCE_FORWARD, self.pos_pull.x, go.EASING_OUTCUBIC, 1)
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	-- follows the player
+	if message_id == hash("Break me") then
+		go.set_position(message.position)
+
+	-- We are maybe in contact with the fox
+	elseif (message_id == TRIGGER_RESPONSE and message.other_id == hash("/fox_player")) then
+		self.in_contact = message.enter
+
+	-- Get the position of the fox when we hit it
+	elseif (message_id == CONTACT_POINT_RESPONSE and message.other_id == hash("/fox_player")) then
+		self.pos_pull = go.get_position() - 10 * message.normal
+	end
+end
+
+-- Fonction pour lister les fichiers d'un répertoire
+function listerFichiers(repertoire)
+	local fichiers = {}  -- Liste pour stocker les noms de fichiers
+	for fichier in lfs.dir(repertoire) do
+		if fichier ~= "." and fichier ~= ".." then
+			table.insert(fichiers, fichier)
+		end
+	end
+	return fichiers
+end
+
+-- Input lorsque l'on tire
+function on_input(self, action_id, action)
+	if (action_id == TO_BREAK and self.in_contact) then
+		if (action.pressed) then
+			local lfs = require("lfs")
+			-- Chemin du répertoire que vous souhaitez parcourir
+			local cheminRepertoire = "/sounds"
+			-- Appel de la fonction pour lister les fichiers du répertoire spécifié
+			local listeDeFichiers = listerFichiers(cheminRepertoire)
+			-- Affichage des noms de fichiers
+			print("Liste des fichiers dans le répertoire:")
+			for _, nomFichier in ipairs(listeDeFichiers) do
+				print(nomFichier)
+			end
+			print(listerFichiers[math.random(#listeDeFichiers)])
+		end
+	end
+end
