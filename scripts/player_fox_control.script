@@ -2,20 +2,15 @@
 
 -- these are the tweaks for the mechanics, feel free to change them for a different feeling
 -- max speed right/left
-<<<<<<< HEAD
-local MAX_GROUND_SPEED = 500
-local MAX_AIR_SPEED = 500
-=======
 local MAX_GROUND_SPEED = 800
 local MAX_AIR_SPEED = 800
->>>>>>> d7bc615b2f1faf4a86fd78683b8ca7d22ca582f0
 -- max fall speed
 local MAX_FALL_SPEED = 500
 
 -- gravity pulling the player down in pixel units
-local GRAVITY = -500
+local GRAVITY = -1500
 -- take-off speed when jumping in pixel units
-local JUMP_TAKEOFF_SPEED = 240
+local JUMP_TAKEOFF_SPEED = 500
 local DOUBLEJUMP_TAKEOFF_SPEED = 200
 -- push-back when shooting
 local RECOIL = 500
@@ -213,20 +208,18 @@ end
 local function jump(self)
 	-- only allow jump from ground
 	-- (extend this with a counter to do things like double-jumps)
-	if action.pressed and self.ground_contact then
+	if self.ground_contact then
 		-- set take-off speed
-		--self.velocity.y = JUMP_TAKEOFF_SPEED
+		self.velocity.y = JUMP_TAKEOFF_SPEED
 		-- play animation
 		--play_animation(self, ANIM_JUMP)
-		--self.ground_contact = false
+		self.ground_contact = false
 		-- compress and stretch player for visual "juice"
-		--squish()
+		squish()
 		-- allow double jump if still moving up
+	end
 	-- add some particles 
 	--particlefx.play("#jump")
-	self.velocity.y = JUMP_TAKEOFF_SPEED
-		self.ground_contact = false
-	end
 end
 
 -- Arrêter de sauter
@@ -258,7 +251,11 @@ function on_input(self, action_id, action)
 	elseif action_id == RIGHT then
 		walk(self, action.value)
 	elseif action_id == JUMP then
+		if action.pressed then
 			jump(self)
+		elseif action.released then
+			abort_jump(self)
+		end
 	elseif action_id == FIRE then
 		if action.released then
 			fire(self)
