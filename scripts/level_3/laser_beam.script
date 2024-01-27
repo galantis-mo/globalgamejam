@@ -1,18 +1,19 @@
 function init(self)
 	go.property("deleting", false)
+	go.set_position([-800, -800])
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	msg.post(hash("/laser_beam_2"), hash("beam_2"))
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("open") then
+	if message_id == hash("beam") then
+
+	end
+	if message_id == hash("kill") then
 		if self.deleting == false then
 			self.deleting = true
-			msg.post(hash("/laser_beam_1"), hash("beam_1"))
 			go.delete()
 		end
 	end
