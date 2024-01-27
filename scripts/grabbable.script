@@ -1,0 +1,27 @@
+local CONTACT_POINT_RESPONSE = hash("contact_point_response")
+local TRIGGER_RESPONSE = hash("trigger_response")
+local TO_GRAB = hash("fairy_right")
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.in_contact = false
+end
+
+
+function on_message(self, message_id, message, sender)
+	-- follows the player
+	if message_id == hash("Follow me") then
+		go.set_position(message.position)
+
+	-- We are in the hitbow of the player
+	elseif (message_id == TRIGGER_RESPONSE) then 
+		self.in_contact = message.enter
+	end
+end
+
+function on_input(self, action_id, action)
+	-- If we can : ask for the fairy's location
+	if (action_id == TO_GRAB and self.in_contact) then
+		msg.post("/fairy_player", hash("Get position"))
+	end
+end
