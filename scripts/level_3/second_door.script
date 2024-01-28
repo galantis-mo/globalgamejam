@@ -3,9 +3,7 @@ function init(self)
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	msg.post(hash("/laser_beam_3"), hash("kill"))
 end
 
 function on_message(self, message_id, message, sender)

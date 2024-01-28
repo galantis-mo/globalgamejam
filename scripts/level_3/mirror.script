@@ -1,7 +1,5 @@
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	go.property("deleting", false)
 end
 
 function update(self, dt)
@@ -10,10 +8,15 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("get_pos") then
-		msg.post(hash("/laser_beam_3"), hash("pos_mir"))
+		msg.post(hash("/laser_beam_3"), hash("pos_mir"), {position = go.get_position()})
 	end
 	if (message_id == hash("trigger_response") and message.other_id == hash("/laser_beam_2")) then
 		msg.post(hash("/laser_beam_3"), hash("beam_3"))
-		msg.post(hash("/laser_beam_3"), hash("enable"))
+	end
+	if message_id == hash("kill") then
+		if self.deleting == false then
+			self.deleting = true
+			go.delete()
+		end
 	end
 end

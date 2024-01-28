@@ -7,12 +7,12 @@ end
 
 function final(self)
 	msg.post(hash("/laser_beam_4"), hash("beam_4"))
+	msg.post(hash("/miror"), hash("kill"))
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("beam_3") then
-		go.set(".", "position.x", 500)
-		go.set(".", "position.y", 500)
+		self.enable = true
 	end
 	if message_id == hash("kill") then
 		if self.deleting == false then
@@ -26,7 +26,7 @@ function on_message(self, message_id, message, sender)
 end
 
 function update(self, dt)
-	if (enable == true) then
+	if (self.enable == true) then
 		msg.post(hash("/miror"), hash("get_pos"))
 	else
 		go.set(".", "position.x", -80000)
