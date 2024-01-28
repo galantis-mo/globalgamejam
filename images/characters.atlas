@@ -2,6 +2,10 @@ images {
   image: "/images/idle_fox.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/images/source/dead.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "anim_walk_start"
   images {
