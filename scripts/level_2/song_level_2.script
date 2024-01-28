@@ -1,0 +1,9 @@
+function init(self)
+	sound.play("#wind")
+	sound.play("#level_2")
+end
+
+function final(self)
+	sound.stop("#wind")
+	sound.stop("#level_2")
+end
