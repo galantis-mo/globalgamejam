@@ -1,3 +1,5 @@
+local CONTACT_POINT_RESPONSE = hash("contact_point_response")
+
 function init(self)
 	self.open = false
 	msg.post("#open", "disable")
@@ -8,7 +10,7 @@ function on_message(self, message_id, message, sender)
 	--pprint(message)
 	-- si le renard passe à travers la porte
 		if message.other_group == hash("characters") then
-			if message.own_group == hash("boundary") then
+			if message_id == CONTACT_POINT_RESPONSE and message.own_group == hash("boundary") then
 				msg.post("/fox_player", hash("door_collision"), {normal = -message.normal, distance = message.distance, open = self.open})
 			end
 			-- open the door		

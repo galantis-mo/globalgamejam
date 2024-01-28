@@ -1,20 +1,20 @@
 local CONTACT_POINT_RESPONSE = hash("contact_point_response")
 local TRIGGER_RESPONSE = hash("trigger_response")
 
-local TO_PUSH = hash("fox_up")
-local DISTANCE = 10
+local TO_PULL = hash("fox_up")
+local DISTANCE = 3
 
 function init(self)
 	-- Input Focus is acquired for the cursor
 	msg.post(".", "acquire_input_focus")
 	self.in_contact = false
 	self.is_pulled = false
-	self.position = go.get_position()
+	self.pos_x = go.get_position().x
 end	
 
 function fixed_update(self, dt)
 	if (self.in_contact and self.is_pulled) then
-		go.animate(".", "position.x", go.PLAYBACK_ONCE_FORWARD, self.position.x, go.EASING_OUTCUBIC, 1)
+		go.animate(go.get_id(), "position.x", go.PLAYBACK_ONCE_FORWARD, self.pos_x, go.EASING_INOUTCUBIC, 1)
 	end
 end
 		
@@ -26,15 +26,16 @@ function on_message(self, message_id, message, sender)
 			self.in_contact = message.enter
 			
 		elseif message_id == CONTACT_POINT_RESPONSE then
-			self.position =  go.get_position("/fox_player")
-			self.position.x = self.position.x - DISTANCE * message.normal.x
+			if (self.in_contact and self.is_pulled) then 
+				self.pos_x = go.get_position("/fox_player").x - DISTANCE * message.normal.x
+			end
 		end
 	end
 end
 
 -- Input lorsque l'on tire
 function on_input(self, action_id, action)
-	if (action_id == TO_PULL and self.in_contact) then
+	if (action_id == TO_PULL) then
 		if (action.pressed) then
 			self.is_pulled = true
 			
