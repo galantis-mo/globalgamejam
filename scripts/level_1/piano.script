@@ -7,6 +7,7 @@ function on_message(self, message_id, message, sender)
 		if self.deleting == false then
 			self.deleting = true
 			is_object_collected = true
+			sound.play("#piano")
 			go.delete()
 		end
 	end

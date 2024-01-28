@@ -11,6 +11,7 @@ local SING_DOWN = hash("fairy_vol_down")
 
 function init(self)
 	self.platform_pickable = false
+	sound.play("#bzbz")
 end
 
 function on_message(self, message_id, message, sender)

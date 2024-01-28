@@ -1,26 +1,30 @@
 -- Time between each frame
-local LEVEL_DURATION = 1024;
+local LEVEL_DURATION = 1024/4;
 
 -- Initialise the beginning of the level and the current frame of the laugh-o-meter
 function init(self)
+	sound.play("#bzbz")
 	self.time = 0
 	self.current_frame = 1
+	self.play = true
 end
 
 -- Updates if possible the laug-o-meter
 function fixed_update(self, dt)
-	self.time = (self.time + 1) % LEVEL_DURATION
+	if (self.play) then
+		self.time = (self.time + 1) % LEVEL_DURATION
 
-	if (self.time == 0) then
-		self.current_frame = self.current_frame + 1
+		if (self.time == 0) then
+			self.current_frame = self.current_frame + 1
 
-		-- If the frame number computed is greater than what we currently have, send a GAME_OVER signal
-		if (self.current_frame > 8) then
-			msg.post("/controller", "RESTART")
-			
-		else
-			-- Change the laugh-o-meter
-			sprite.play_flipbook("#inside", "laugh_o_meter_0"..tostring(self.current_frame))
+			-- If the frame number computed is greater than what we currently have, send a GAME_OVER signal
+			if (self.current_frame > 8) then
+				msg.post("/controller", "RESTART")
+				
+			else
+				-- Change the laugh-o-meter
+				sprite.play_flipbook("#inside", "laugh_o_meter_0"..tostring(self.current_frame))
+			end
 		end
 	end
 end
@@ -30,6 +34,7 @@ function on_message(self, message_id, message, sender)
 		print("barre o metre non aff")
 		msg.post("#inside", "disable")
 		msg.post("#outline", "disable")
+		
 	elseif message_id == hash("new") then
 		print("barre o metre aff")
 		self.time = 0
@@ -37,5 +42,10 @@ function on_message(self, message_id, message, sender)
 		sprite.play_flipbook("#inside", "laugh_o_meter_0"..tostring(self.current_frame))
 		msg.post("#inside", "enable")
 		msg.post("#outline", "enable")
+
+	elseif message_id == hash("pause") then
+		self.play = false
+	elseif message_id == hash("play") then
+		self.play = true
 	end
 end

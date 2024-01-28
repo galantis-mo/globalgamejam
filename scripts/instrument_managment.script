@@ -6,4 +6,5 @@ function update(self, dt)
 		msg.post("/controller", "NEXT_LEVEL")
 		current_level = current_level + 1
 		is_object_collected = false
+	end
 end
