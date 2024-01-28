@@ -1,5 +1,6 @@
 function init(self)
 	go.property("deleting", false)
+	go.property("enable", false)
 	go.set(".", "position.x", -80000)
 	go.set(".", "position.y", -80000)
 end
@@ -18,5 +19,17 @@ function on_message(self, message_id, message, sender)
 			self.deleting = true
 			go.delete()
 		end
+	end
+	if message_id == hash("pos_mir") then
+		go.set_position(message.position)
+	end
+end
+
+function update(self, dt)
+	if (enable == true) then
+		msg.post(hash("/miror"), hash("get_pos"))
+	else
+		go.set(".", "position.x", -80000)
+		go.set(".", "position.y", -80000)
 	end
 end

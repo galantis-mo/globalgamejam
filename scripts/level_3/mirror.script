@@ -9,7 +9,11 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
+	if message_id == hash("get_pos") then
+		msg.post(hash("/laser_beam_3"), hash("pos_mir"))
+	end
+	if (message_id == hash("trigger_response") and message.other_id == hash("/laser_beam_2")) then
+		msg.post(hash("/laser_beam_3"), hash("beam_3"))
+		msg.post(hash("/laser_beam_3"), hash("enable"))
+	end
 end

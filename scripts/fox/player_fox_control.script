@@ -228,6 +228,7 @@ end
 local function jump(self)
 	-- only allow jump from ground
 	-- (extend this with a counter to do things like double-jumps)
+	self.direction = -self.direction
 	if self.ground_contact then
 		sound.play("#jump")
 		-- set take-off speed
