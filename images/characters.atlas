@@ -7,125 +7,6 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 animations {
-  id: "anim_walk"
-  images {
-    image: "/images/annimation/wack_boucle/Image.001.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.002.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.003.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.004.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.005.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.006.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.007.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.008.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.009.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.010.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.011.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.012.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.013.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.014.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.015.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.016.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.017.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.018.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.019.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.020.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.021.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.022.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.023.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.024.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.025.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.026.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.027.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/images/annimation/wack_boucle/Image.028.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 60
-  flip_horizontal: 0
-  flip_vertical: 0
-}
-animations {
   id: "anim_walk_start"
   images {
     image: "/images/annimation/walck_starte/Image.001.png"
@@ -246,6 +127,241 @@ animations {
   playback: PLAYBACK_LOOP_FORWARD
   fps: 60
   flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "anim_walk"
+  images {
+    image: "/images/annimation/wack_boucle/Image.001.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.002.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.003.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.004.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.005.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.006.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.007.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.008.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.009.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.010.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.011.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.012.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.013.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.014.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.015.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.016.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.017.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.018.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.019.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.020.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.021.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.022.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.023.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.024.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.025.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.026.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.027.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/wack_boucle/Image.028.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.001.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.002.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.003.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.004.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.005.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.006.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.007.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.008.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.009.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.010.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.011.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.012.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.013.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.014.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.015.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.016.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.017.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.018.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.019.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.020.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.021.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.022.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.023.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.024.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.025.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.026.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.027.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.028.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/walck_starte/Image.029.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 60
+  flip_horizontal: 1
   flip_vertical: 0
 }
 animations {
