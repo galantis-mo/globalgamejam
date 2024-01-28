@@ -1,5 +1,6 @@
 -- Globals for collision management
 local CONTACT_POINT_RESPONSE = hash("contact_point_response")
+local TRIGGER_RESPONSE = hash("trigger_response")
 local MOVE = hash("cursor_move")
 
 local GRAB = hash("fairy_right")
@@ -8,13 +9,22 @@ local INTERACT = hash("fairy_left")
 local SING_UP = hash("fairy_vol_up")
 local SING_DOWN = hash("fairy_vol_down")
 
+function init(self)
+	self.platform_pickable = false
+end
+
 function on_message(self, message_id, message, sender)
 	-- Move the sprite
 	if (message_id == MOVE) then
 		go.set_position(message.position)
-
+	end
 	-- Give our position to the grabbable object
-	elseif (message_id == hash("Get position")) then
+	if (message_id == hash("Get position")) then
 		msg.post(sender, hash("Follow me"), {position = go.get_position()})
+	end
+	--Verify if we can take the platform
+	if (message_id == hash("pickable_fairy")) then
+		print("can take")
+		self.platform_pickable = true
 	end
 end
