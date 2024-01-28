@@ -15,6 +15,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("beam_4") then
 		go.set(".", "position.x", 0)
 		go.set(".", "position.y", 0)
+		--spawn instru
 	end
 	if message_id == hash("kill") then
 		if self.deleting == false then

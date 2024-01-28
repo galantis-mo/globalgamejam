@@ -11,7 +11,8 @@ function final(self)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("trigger_response") and message.other_id == hash("laser_beam_3") then
-		msg.post(second_door, open)
+	if message_id == hash("trigger_response") and message.other_id == hash("/laser_beam_3") then
+		msg.post(hash("/second_door"), hash("open"))
+		msg.post(hash("/mirror"), hash("kill"))
 	end
 end

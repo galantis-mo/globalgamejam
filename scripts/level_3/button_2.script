@@ -10,10 +10,8 @@ function final(self)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
 	if message_id == hash("trigger_response") and message.other_id == hash("/fairy_player") then
 		msg.post("/last_door", hash("open"))
+		msg.post("/laser_beam_4", hash("beam_4"))
 	end
 end
