@@ -5,8 +5,8 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("trigger_response") and message.other_id == hash("/fox_player") then
 		if self.deleting == false then
+			coroutine.yield(1)
 			self.deleting = true
-			is_object_collected = true
 			go.delete()
 		end
 	end
