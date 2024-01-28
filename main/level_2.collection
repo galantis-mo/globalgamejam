@@ -1056,7 +1056,24 @@ embedded_instances {
 }
 embedded_instances {
   id: "bass"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"basse\"\n"
+  "  component: \"/scripts/level_2/basse.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/images/level_2.atlas\\\"\\n"
@@ -1080,12 +1097,12 @@ embedded_instances {
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
   "  data: \"collision_shape: \\\"\\\"\\n"
-  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "type: COLLISION_OBJECT_TYPE_TRIGGER\\n"
   "mass: 0.0\\n"
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
   "group: \\\"default\\\"\\n"
-  "mask: \\\"default\\\"\\n"
+  "mask: \\\"characters\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
@@ -1140,51 +1157,6 @@ embedded_instances {
     x: 0.25
     y: 0.25
     z: 0.25
-  }
-}
-embedded_instances {
-  id: "fairy_viveliane"
-  data: "embedded_components {\n"
-  "  id: \"sprite\"\n"
-  "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/images/characters.atlas\\\"\\n"
-  "default_animation: \\\"fairy\\\"\\n"
-  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
-  "blend_mode: BLEND_MODE_ALPHA\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "  scale {\n"
-  "    x: 0.069056\n"
-  "    y: 0.069056\n"
-  "    z: 0.069056\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
-    x: 1722.0
-    y: 403.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: -0.812173
-    y: 0.81312
-    z: 0.81312
   }
 }
 embedded_instances {

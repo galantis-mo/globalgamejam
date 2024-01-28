@@ -7,9 +7,8 @@ function on_message(self, message_id, message, sender)
 		self.enable = true
 	end
 	if message_id == hash("trigger_response") and message.other_id == hash("/fox_player") and self.enable then
-		msg.post("#hidden", "enable")
-		msg.post("#display", "disable")
+		print("done")
 		sound.play("#basse")
 		is_object_collected = true
 	end
-endd
+end
