@@ -1,0 +1,20 @@
+local TRIGGER_RESPONSE = hash("trigger_response")
+
+function init(self)
+	self.is_fairy_on = false
+	self.is_fox_on	 = false
+end
+
+function fixed_update(self, dt)
+	if (self.is_fairy_on and self.is_fox_on) then
+		msg.post("main/controller", "change_level")
+	then
+		
+end
+
+function on_message(self, message_id, message, sender)
+	if (message_id == TRIGGER_RESPONSE) then
+		self.is_fairy_on = message.enter and message.other_id == hash("/fairy_player")
+		self.is_fox_on = message.enter and message.other_id == hash("/fox_player")
+	end
+end

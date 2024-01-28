@@ -1,6 +1,3 @@
--- Declare a local Lua Module Pointer
-local anim = require 'main.modules.animateCalls'
-
 -- Buttons textures
 local HOVER = hash("button_0")
 local INIT = hash("button_1")
@@ -12,7 +9,7 @@ function init(self)
 	msg.post("#", "disable")
 
 	-- start animations for all Level1 GUI nodes
-	anim.animateButton1(gui.get_node("exit"), 0.2)
+	animateButton1(gui.get_node("exit"), 0.2)
 
 	self.exit = gui.get_node("exit")
 	self.continue = gui.get_node("continue")
@@ -48,13 +45,13 @@ end
 function buttonPressed(x, y)
 	local d = 0.05
 	if (gui.pick_node(self.exit, x, y)) then
-		anim.animateButtonPress(self.exit, d)
+		animateButtonPress(self.exit, d)
 		
 	elseif (gui.pick_node(self.continue, x, y)) then
-		anim.animateButtonPress(self.continue, d)
+		animateButtonPress(self.continue, d)
 		
 	elseif (gui.pick_node(self.restart, x, y)) then
-		anim.animateButtonPress(self.restart, d)
+		animateButtonPress(self.restart, d)
 	end
 end
 
@@ -70,15 +67,25 @@ end
 function buttonReleased(x, y)
 	local d = 0.05
 	if (gui.pick_node(self.exit, x, y)) then
-		anim.animateButtonPress(self.exit, d)
+		animateButtonRelease(self.exit, d)
 		msd.post("/controller", "EXIT")		
 
 	elseif (gui.pick_node(self.continue, x, y)) then
-		anim.animateButtonPress(self.continue, d)
+		animateButtonRelease(self.continue, d)
 		msd.post("/controller", "CONTINUE")		
 
 	elseif (gui.pick_node(self.restart, x, y)) then
-		anim.animateButtonPress(self.restart, d)
+		animateButtonRelease(self.restart, d)
 		msd.post("/controller", "RESTART")		
 	end
+end
+
+function animateButtonPress(button, size)
+	local s = 1.2
+	gui.animate(node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_IN, 0.1, d)
+end
+function M.animateButtonRelease(button, d)
+	-- animate scale back to 100%
+	local s = 1.0
+	gui.animate(node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_IN, 0.1, d)
 end
