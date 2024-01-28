@@ -2,8 +2,8 @@
 
 -- these are the tweaks for the mechanics, feel free to change them for a different feeling
 -- max speed right/left
-local MAX_GROUND_SPEED = 800
-local MAX_AIR_SPEED = 800
+local MAX_GROUND_SPEED = 600
+local MAX_AIR_SPEED = 650
 -- max fall speed
 local MAX_FALL_SPEED = 800
 
