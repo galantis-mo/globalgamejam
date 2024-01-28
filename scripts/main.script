@@ -21,6 +21,9 @@ function on_message(self, message_id, message, sender)
 		elseif self.state == "lvl2_running" then
 			msg.post("#lvl3_proxy", "load")
 			msg.post("#lvl2_proxy", "unload")
+		elseif self.state == "lvl3_running" then
+			msg.post("#credit_proxy", "load")
+			msg.post("#lvl3_proxy", "unload")
 		end
 		
 	-- Rechargement des niveaux en cas de mort--------------
@@ -38,7 +41,7 @@ elseif message_id == hash("RESTART") then
 			msg.post("#lvl2_proxy", "load")
 		elseif self.state == "lvl3_running" then
 			msg.post("#lvl3_proxy", "unload")
-			msg.post("#lvl3_proxy", "load")
+			msg.post("#credit", "load")
 		end
 		msg.post("/laugh_o_meter", "kill")
 		
@@ -62,7 +65,11 @@ elseif message_id == hash("RESTART") then
 			msg.post(sender, "enable")
 			self.state = "lvl3_running"
 		end
-		
+		if sender == msg.url("#credit_proxy") then
+			print("credit est load")
+			msg.post(sender, "enable")
+			self.state = "credit_running"
+		end
 	end
 end
 

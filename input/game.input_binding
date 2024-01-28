@@ -24,7 +24,7 @@ key_trigger {
 }
 key_trigger {
   input: KEY_P
-  action: "change_level"
+  action: "next_level"
 }
 key_trigger {
   input: KEY_ESC
