@@ -3,7 +3,43 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/source/LVL-3/16-9-NV2.png"
+  image: "/images/source/LVL-3/16-9-NV3-background.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-3/16-9-NV3-crystal.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-3/16-9-NV3-fary-light.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-3/16-9-NV3-fontground.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/leaves.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-3/branche_bas_droites.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-3/branche_haut_gauches.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-3/branche_haut_droite.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-3/16-9-NV3-lazer-base.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-3/16-9-NV3-button.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 animations {
