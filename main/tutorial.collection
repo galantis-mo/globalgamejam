@@ -3,8 +3,8 @@ instances {
   id: "fox_player"
   prototype: "/main/fox_player.go"
   position {
-    x: 298.0
-    y: 388.0
+    x: 157.0
+    y: 237.0
     z: 0.0
   }
   rotation {
@@ -61,7 +61,7 @@ embedded_instances {
   "}\n"
   "components {\n"
   "  id: \"song\"\n"
-  "  component: \"/scripts/tutorial/song.script\"\n"
+  "  component: \"/scripts/tutorial/song_tuto.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

@@ -44,7 +44,7 @@ embedded_instances {
   id: "background"
   data: "components {\n"
   "  id: \"song\"\n"
-  "  component: \"/scripts/level_1/song.script\"\n"
+  "  component: \"/scripts/level_1/song_level_1.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
