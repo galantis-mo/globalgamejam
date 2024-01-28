@@ -1,7 +1,7 @@
 function init(self)
-	particlefx.play("/light#particles")
+	particlefx.play("#particles")
 end
 
 function final(self)
-	particlefx.stop("/light#particles")
+	particlefx.stop("#particles")
 end

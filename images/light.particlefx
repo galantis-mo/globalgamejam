@@ -37,7 +37,7 @@ emitters {
     key: EMITTER_KEY_SIZE_X
     points {
       x: 0.0
-      y: 243.59814
+      y: 359.52304
       t_x: 1.0
       t_y: 0.0
     }
@@ -47,7 +47,7 @@ emitters {
     key: EMITTER_KEY_SIZE_Y
     points {
       x: 0.0
-      y: 8.407949
+      y: 5.233289
       t_x: 1.0
       t_y: 0.0
     }
@@ -77,9 +77,15 @@ emitters {
     key: EMITTER_KEY_PARTICLE_SPEED
     points {
       x: 0.0
-      y: 100.0
+      y: 53.28582
       t_x: 1.0
       t_y: 0.0
+    }
+    points {
+      x: 1.0
+      y: 18.626911
+      t_x: 0.0062386985
+      t_y: -0.99998057
     }
     spread: 0.0
   }
@@ -281,5 +287,90 @@ emitters {
     x: 0.0
     y: 0.0
     z: 0.0
+  }
+}
+modifiers {
+  type: MODIFIER_TYPE_DRAG
+  use_direction: 0
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  properties {
+    key: MODIFIER_KEY_MAGNITUDE
+    points {
+      x: 0.0
+      y: 0.0
+      t_x: 1.0
+      t_y: 0.0
+    }
+    spread: 0.2
+  }
+}
+modifiers {
+  type: MODIFIER_TYPE_RADIAL
+  use_direction: 0
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  properties {
+    key: MODIFIER_KEY_MAGNITUDE
+    points {
+      x: 0.0
+      y: 12.766896
+      t_x: 1.0
+      t_y: 0.0
+    }
+    spread: 0.0
+  }
+  properties {
+    key: MODIFIER_KEY_MAX_DISTANCE
+    points {
+      x: 0.0
+      y: 1000.0
+      t_x: 1.0
+      t_y: 0.0
+    }
+    spread: 0.0
+  }
+}
+modifiers {
+  type: MODIFIER_TYPE_ACCELERATION
+  use_direction: 0
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.38268343
+    w: 0.9238795
+  }
+  properties {
+    key: MODIFIER_KEY_MAGNITUDE
+    points {
+      x: 0.0
+      y: 1.224723
+      t_x: 1.0
+      t_y: 0.0
+    }
+    spread: 0.0
   }
 }
