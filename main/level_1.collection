@@ -61,9 +61,6 @@ embedded_instances {
   "}\n"
   "components {\n"
   "  id: \"level_1\"\n"
-<<<<<<< HEAD
-  "  component: \"/assests/sound/musics/tutorial.sound\"\n"
-=======
   "  component: \"/assests/sound/musics/level_1.sound\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -82,7 +79,6 @@ embedded_instances {
   "components {\n"
   "  id: \"water\"\n"
   "  component: \"/assests/sound/bg/water.sound\"\n"
->>>>>>> ae8b418a9c312388b74e22c4d9d7227ad98b83d6
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
