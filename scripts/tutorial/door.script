@@ -7,17 +7,16 @@ end
 function on_message(self, message_id, message, sender)
 	--pprint(message)
 	-- si le renard passe à travers la porte
-	if (message_id == hash("contact_point_response")) then
 		if message.other_group == hash("characters") then
 			if message.own_group == hash("boundary") then
 				msg.post("/fox_player", hash("door_collision"), {normal = -message.normal, distance = message.distance, open = self.open})
 			end
+			-- open the door		
+		elseif (message.other_id == hash("/key") and message.own_group == hash("unlock")) then
+			msg.post("#open", "enable")
+			msg.post("#close", "disable")
+			msg.post("#block", "disable")
+			self.open = true
+			msg.post("/key", "disable")
 		end
-	-- open the door		
-	elseif message.other_id == hash("/key") and message.own_id == hash("unlock") then
-		msg.post("#open", "enable")
-		msg.post("#close", "disable")
-		msg.post("#block", "disable")
-		self.open = true
-	end
 end
