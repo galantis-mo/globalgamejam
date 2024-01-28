@@ -5,7 +5,7 @@ instances {
   position {
     x: 320.0
     y: 226.0
-    z: 5.0
+    z: 2.0
   }
   rotation {
     x: 0.0
@@ -25,7 +25,7 @@ instances {
   position {
     x: 169.0
     y: 184.0
-    z: 5.0
+    z: 2.0
   }
   rotation {
     x: 0.0
@@ -34,8 +34,8 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
+    x: 0.2
+    y: 0.2
     z: 1.0
   }
 }
@@ -1832,7 +1832,7 @@ embedded_instances {
   position {
     x: 1046.0
     y: 420.0
-    z: 0.0
+    z: 1.0
   }
   rotation {
     x: 0.0
@@ -2176,6 +2176,7 @@ embedded_instances {
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
   "group: \\\"beam\\\"\\n"
+  "mask: \\\"grabbable\\\"\\n"
   "mask: \\\"default\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
