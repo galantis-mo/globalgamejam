@@ -10,19 +10,17 @@ end
 -- Updates if possible the laug-o-meter
 function fixed_update(self, dt)
 	self.time = (self.time + 1) % LEVEL_DURATION
-	print("TIME :: ", self.time)
 
 	if (self.time == 0) then
 		self.current_frame = self.current_frame % 8 + 1
 
 		-- If the frame number computed is greater than what we currently have, send a GAME_OVER signal
 		if (self.current_frame > 8) then
-			msg.post(".", hash("GAME_OVER"))
+			msg.post("main/controller", hash("GAME_OVER"))
 			
 		else
 			-- Change the laugh-o-meter
 			sprite.play_flipbook("#inside", "laugh_o_meter_0"..tostring(self.current_frame))
-			print("FRAME :: ", self.current_frame)
 		end
 	end
 end
