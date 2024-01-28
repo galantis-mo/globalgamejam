@@ -463,6 +463,29 @@ animations {
   flip_horizontal: 0
   flip_vertical: 0
 }
+animations {
+  id: "fairy_fly"
+  images {
+    image: "/images/annimation/fary-fly/1-haut-haut.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/fary-fly/2-haut-milieux.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/fary-fly/3-milieux-bas.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  images {
+    image: "/images/annimation/fary-fly/4-bas-milieux.png"
+    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 6
+  flip_horizontal: 0
+  flip_vertical: 0
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
