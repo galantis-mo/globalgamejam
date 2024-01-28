@@ -93,6 +93,7 @@ embedded_components {
   "group: \"default\"\n"
   "mask: \"grabbable\"\n"
   "mask: \"button\"\n"
+  "mask: \"recorder\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
