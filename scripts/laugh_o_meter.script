@@ -1,5 +1,5 @@
 -- Time between each frame
-local LEVEL_DURATION = 1024;
+local LEVEL_DURATION = 1024/4;
 
 -- Initialise the beginning of the level and the current frame of the laugh-o-meter
 function init(self)

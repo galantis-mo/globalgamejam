@@ -42,6 +42,10 @@ images {
   image: "/images/source/LVL-3/16-9-NV3-button.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/images/source/instruments/guitar.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "mirror_anim"
   images {
