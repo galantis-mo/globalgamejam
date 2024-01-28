@@ -16,3 +16,4 @@ function on_message(self, message_id, message, sender)
 		msg.post(hash("/laser_beam_3"), hash("beam_3"))
 		msg.post(hash("/laser_beam_3"), hash("enable"))
 	end
+end
