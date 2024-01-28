@@ -1,0 +1,84 @@
+-- Declare a local Lua Module Pointer
+local anim = require 'main.modules.animateCalls'
+
+-- Buttons textures
+local HOVER = hash("button_0")
+local INIT = hash("button_1")
+-- ------------------------------------------------------------------------------------------
+-- Initialization 
+-- ------------------------------------------------------------------------------------------
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	msg.post("#", "disable")
+
+	-- start animations for all Level1 GUI nodes
+	anim.animateButton1(gui.get_node("exit"), 0.2)
+
+	self.exit = gui.get_node("exit")
+	self.continue = gui.get_node("continue")
+	self.restart = gui.get_node("restart")
+end
+
+-- ------------------------------------------------------------------------------------------
+-- Hovering Processing
+-- ------------------------------------------------------------------------------------------
+function reset_buttons()
+	gui.play_flipbook(self.exit, INIT)
+	gui.play_flipbook(self.exit, INIT)
+	gui.play_flipbook(self.exit, INIT)
+end
+	
+function update(self, dt)
+	if (gui.pick_node(self.exit, action.x, action.y)) then
+		gui.play_flipbook(self.exit, HOVER)
+		
+	elseif (gui.pick_node(self.continue, action.x, action.y)) then
+		gui.play_flipbook(self.continue, HOVER)
+		
+	elseif (gui.pick_node(self.restart, action.x, action.y)) then
+		gui.play_flipbook(self.restart, HOVER)
+	else
+		reset_buttons()
+	end
+end
+		
+-- ------------------------------------------------------------------------------------------
+-- Input Processing
+-- ------------------------------------------------------------------------------------------
+function buttonPressed(x, y)
+	local d = 0.05
+	if (gui.pick_node(self.exit, x, y)) then
+		anim.animateButtonPress(self.exit, d)
+		
+	elseif (gui.pick_node(self.continue, x, y)) then
+		anim.animateButtonPress(self.continue, d)
+		
+	elseif (gui.pick_node(self.restart, x, y)) then
+		anim.animateButtonPress(self.restart, d)
+	end
+end
+
+function on_input(self, action_id, action)
+	if action.pressed then
+		buttonPressed(action.x, action.y)
+
+	elseif action.released then
+		buttonReleased(action.x, action.y)
+	end
+end
+
+function buttonReleased(x, y)
+	local d = 0.05
+	if (gui.pick_node(self.exit, x, y)) then
+		anim.animateButtonPress(self.exit, d)
+		msd.post("/controller", "EXIT")		
+
+	elseif (gui.pick_node(self.continue, x, y)) then
+		anim.animateButtonPress(self.continue, d)
+		msd.post("/controller", "CONTINUE")		
+
+	elseif (gui.pick_node(self.restart, x, y)) then
+		anim.animateButtonPress(self.restart, d)
+		msd.post("/controller", "RESTART")		
+	end
+end

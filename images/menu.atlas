@@ -1,9 +1,13 @@
 images {
-  image: "/images/source/menu_buttons.png"
+  image: "/images/button_1.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/button_0.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0
-extrude_borders: 2
+extrude_borders: 3
 inner_padding: 0
 max_page_width: 0
 max_page_height: 0

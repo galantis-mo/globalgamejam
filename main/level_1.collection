@@ -61,7 +61,7 @@ embedded_instances {
   "}\n"
   "components {\n"
   "  id: \"level_1\"\n"
-  "  component: \"/assests/sound/sound_effect/jump_copy.sound\"\n"
+  "  component: \"/assests/sound/musics/tutorial.sound\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
