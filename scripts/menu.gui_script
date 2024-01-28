@@ -6,76 +6,63 @@ local INIT = hash("button_1")
 -- ------------------------------------------------------------------------------------------
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	
-	-- start animations for all Level1 GUI nodes
-	animateButton1(gui.get_node("exit"), 0.2)
-
-	self.exit = gui.get_node("exit")
-	self.continue = gui.get_node("continue")
-	self.restart = gui.get_node("restart")
+	self.action = vmath.vector3(0)
 end
 
 -- ------------------------------------------------------------------------------------------
 -- Hovering Processing
 -- ------------------------------------------------------------------------------------------
-function reset_buttons()
-	gui.play_flipbook(self.exit, INIT)
-	gui.play_flipbook(self.exit, INIT)
-	gui.play_flipbook(self.exit, INIT)
+function reset_buttons(menu)
+	gui.play_flipbook(menu.exit, INIT)
+	gui.play_flipbook(menu.retry, INIT)
+	gui.play_flipbook(menu.continue, INIT)
 end
 	
 function update(self, dt)
-	if (gui.pick_node(self.exit, action.x, action.y)) then
-		gui.play_flipbook(self.exit, HOVER)
+	if (gui.pick_node(gui.get_node("exit"), self.action.x, self.action.y)) then
+		gui.play_flipbook(gui.get_node("exit"), HOVER)
 		
-	elseif (gui.pick_node(self.continue, action.x, action.y)) then
-		gui.play_flipbook(self.continue, HOVER)
+	elseif (gui.pick_node(gui.get_node("continue"), self.action.x, self.action.y)) then
+		gui.play_flipbook(gui.get_node("continue"), HOVER)
 		
-	elseif (gui.pick_node(self.restart, action.x, action.y)) then
-		gui.play_flipbook(self.restart, HOVER)
+	elseif (gui.pick_node(gui.get_node("retry"), self.action.x, self.action.y)) then
+		gui.play_flipbook(gui.get_node("retry"), HOVER)
 	else
-		reset_buttons()
-	end
-end
-		
--- ------------------------------------------------------------------------------------------
--- Input Processing
--- ------------------------------------------------------------------------------------------
-function buttonPressed(x, y)
-	local d = 0.05
-	if (gui.pick_node(self.exit, x, y)) then
-		animateButtonPress(self.exit, d)
-		
-	elseif (gui.pick_node(self.continue, x, y)) then
-		animateButtonPress(self.continue, d)
-		
-	elseif (gui.pick_node(self.restart, x, y)) then
-		animateButtonPress(self.restart, d)
+		gui.play_flipbook(gui.get_node("retry"), INIT)
+		gui.play_flipbook(gui.get_node("contnue"), INIT)
+		gui.play_flipbook(gui.get_node("exit"), INIT)
 	end
 end
 
 function on_input(self, action_id, action)
+	self.action = vmath.vector3(self.action.x, self.action.y, 0)
+	local d = 0.05
+	
 	if action.pressed then
-		buttonPressed(action.x, action.y)
+		if (gui.pick_node(menu.exit, x, y)) then
+			animateButtonPress(menu.exit, d)
+
+		elseif (gui.pick_node(menu.continue, x, y)) then
+			animateButtonPress(menu.continue, d)
+
+		elseif (gui.pick_node(menu.retry, x, y)) then
+			animateButtonPress(menu.retry, d)
+		end
 
 	elseif action.released then
-		buttonReleased(action.x, action.y)
-	end
-end
+		if (gui.pick_node(self.exit, x, y)) then
+			animateButtonRelease(self.exit, d)
+			msg.post("/controller", "EXIT")		
 
-function buttonReleased(x, y)
-	local d = 0.05
-	if (gui.pick_node(self.exit, x, y)) then
-		animateButtonRelease(self.exit, d)
-		msd.post("/controller", "EXIT")		
+		elseif (gui.pick_node(self.continue, x, y)) then
+			animateButtonRelease(self.continue, d)
+			msg.post("/controller", "CONTINUE")		
 
-	elseif (gui.pick_node(self.continue, x, y)) then
-		animateButtonRelease(self.continue, d)
-		msd.post("/controller", "CONTINUE")		
-
-	elseif (gui.pick_node(self.restart, x, y)) then
-		animateButtonRelease(self.restart, d)
-		msd.post("/controller", "RESTART")		
+		elseif (gui.pick_node(self.retry, x, y)) then
+			print("RETRY RELEASED")
+			animateButtonRelease(menu.retry, d)
+			msg.post("/controller", "RESTART")		
+		end
 	end
 end
 
