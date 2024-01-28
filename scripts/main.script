@@ -24,6 +24,7 @@ function on_message(self, message_id, message, sender)
 		elseif self.state == "lvl3_running" then
 			msg.post("#credit_proxy", "load")
 			msg.post("#lvl3_proxy", "unload")
+			msg.post("/laugh_o_meter", "disable")
 		end
 		
 	-- Rechargement des niveaux en cas de mort--------------
