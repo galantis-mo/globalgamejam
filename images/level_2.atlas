@@ -1,8 +1,4 @@
 images {
-  image: "/images/source/tutorial/16-9-NV0-tuto.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
   image: "/images/source/LVL-2/marmite.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
@@ -12,6 +8,26 @@ images {
 }
 images {
   image: "/images/source/LVL-2/mushroom_2.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/instruments/bass.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-2/16-9-NV2-champi-grouth.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-2/16-9-NV2-champi-push.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-2/16-9-NV2-background.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/source/LVL-2/16-9-NV2-frontground.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0

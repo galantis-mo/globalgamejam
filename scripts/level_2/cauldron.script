@@ -1,0 +1,23 @@
+local CONTACT_POINT_RESPONSE = hash("contact_point_response")
+
+function init(self)
+	self.mushroom1collected = false
+	self.mushroom2collected = false
+	msg.post("/bass", "disable")
+end
+
+function on_message(self, message_id, message, sender)	
+	if message.other_id == hash("/collactable_mushroom1")then
+		msg.post("/collactable_mushroom1", "disable")
+		self.mushroom1collected = true
+		if(self.mushroom1collected==true and self.mushroom2collected==true) then
+			msg.post("/bass", "enable")
+		end
+	elseif message.other_id == hash("/collactable_mushroom2") then
+		msg.post("/collactable_mushroom2", "disable")
+		self.mushroom2collected = true
+		if(self.mushroom1collected==true and self.mushroom2collected==true) then
+			msg.post("/bass", "enable")
+		end
+	end
+end
