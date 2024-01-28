@@ -39,6 +39,26 @@ instances {
     z: 0.058308
   }
 }
+instances {
+  id: "laugh-o-meter"
+  prototype: "/main/laugh-o-meter.go"
+  position {
+    x: 1837.0
+    y: 720.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.1
+    y: 0.1
+    z: 0.1
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "background"
