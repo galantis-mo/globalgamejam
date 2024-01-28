@@ -1,12 +1,4 @@
 images {
-  image: "/images/source/fairy.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/images/source/fox.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
   image: "/images/idle_fox.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
@@ -364,7 +356,7 @@ animations {
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 60
+  fps: 40
   flip_horizontal: 1
   flip_vertical: 0
 }
