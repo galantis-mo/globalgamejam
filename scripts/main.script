@@ -3,13 +3,13 @@ function init(self)
 	self.state = "no_level"
 	msg.post(".", "NEXT_LEVEL")
 	msg.post(".", "acquire_input_focus")
+	msg.post("/menu_interface", "disable")
 	
 end
 
 function on_message(self, message_id, message, sender)
 	-- Chargement & Déchargement des niveaux-----------------
 	if message_id == hash("NEXT_LEVEL") then
-		print("nyeh")
 		if self.state == "no_level" then 
 			msg.post("#tuto_proxy", "load")
 		elseif self.state == "tutorial_running" then
@@ -76,7 +76,9 @@ function on_message(self, message_id, message, sender)
 			self.state = "lvl3_running"
 		end
 		
-	end   
+	end
+
+	msg.post("/menu_interface", "disable")
 end
 
 -- Lecture des input clavier et souris
@@ -88,7 +90,7 @@ function on_input(self, action_id, action)
 
 	-- Action d'affichage du menu
 	elseif action_id == hash("menu") then
-		msg.post("#main_menu", "enable")
+		msg.post("/menu_interface", "enable")
 		if self.state == "tutorial_running" then
 			msg.post("#tuto_proxy", "disable")
 		elseif self.state == "start_lvl1" then

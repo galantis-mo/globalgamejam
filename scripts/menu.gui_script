@@ -6,8 +6,7 @@ local INIT = hash("button_1")
 -- ------------------------------------------------------------------------------------------
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	msg.post("#", "disable")
-
+	
 	-- start animations for all Level1 GUI nodes
 	animateButton1(gui.get_node("exit"), 0.2)
 

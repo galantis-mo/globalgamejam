@@ -26,6 +26,10 @@ key_trigger {
   input: KEY_P
   action: "change_level"
 }
+key_trigger {
+  input: KEY_ESC
+  action: "menu"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "fairy_left"
