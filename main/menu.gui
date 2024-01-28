@@ -1,4 +1,4 @@
-script: ""
+script: "/scripts/menu.gui_script"
 fonts {
   name: "JosefinSans"
   font: "/font/JosefinSans.font"

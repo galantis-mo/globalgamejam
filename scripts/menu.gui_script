@@ -84,7 +84,7 @@ function animateButtonPress(button, size)
 	local s = 1.2
 	gui.animate(node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_IN, 0.1, d)
 end
-function M.animateButtonRelease(button, d)
+function animateButtonRelease(button, d)
 	-- animate scale back to 100%
 	local s = 1.0
 	gui.animate(node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_IN, 0.1, d)
