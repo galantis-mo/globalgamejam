@@ -1,0 +1,57 @@
+local CONTACT_POINT_RESPONSE = hash("contact_point_response")
+local TRIGGER_RESPONSE = hash("trigger_response")
+
+local TO_SCREAM = hash("fox_down")
+
+function init(self)
+	-- Input Focus is acquired for the cursor
+	msg.post(".", "acquire_input_focus")
+	self.in_contact = false
+	self.has_broken = false
+	self.is_screaming = false
+	self.is_playing = false
+end	
+
+
+function fixed_update(self, dt)
+	if (self.in_contact and self.is_screaming) then
+		if (not self.is_playing) then
+			sound.play("/fox_player#scream", {}, music_done)
+		end
+
+		if (not self.has_broken) then
+			msg.post(".", "SCREAM_RESPONSE")
+			self.has_broken = true
+		end
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	-- We are maybe in contact with the fox
+	if message.other_group == hash("scream") then
+		if message_id == TRIGGER_RESPONSE then
+			self.in_contact = message.enter
+		end
+	end
+end
+
+function music_done(self, message_id, message, sender)
+	self.is_playing = false
+end
+
+-- Input lorsque l'on tire
+function on_input(self, action_id, action)
+	if (action_id == TO_SCREAM) then
+		if (action.pressed) then
+			self.is_screaming = true
+			self.is_playing = true
+			sound.play("/fox_player#scream", {}, music_done)
+
+		elseif (action.released) then
+			self.is_screaming = false
+			if (sound.is_music_playing()) then
+				sound.stop("/fox_player#scream")
+			end
+		end
+	end
+end
