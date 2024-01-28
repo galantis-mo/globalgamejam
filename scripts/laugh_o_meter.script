@@ -3,6 +3,7 @@ local LEVEL_DURATION = 1024;
 
 -- Initialise the beginning of the level and the current frame of the laugh-o-meter
 function init(self)
+	sound.play("#bzbz")
 	self.time = 0
 	self.current_frame = 1
 	self.play = true

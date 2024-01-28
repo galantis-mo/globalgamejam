@@ -66,7 +66,7 @@ embedded_components {
   id: "sprite"
   type: "sprite"
   data: "tile_set: \"/images/characters.atlas\"\n"
-  "default_animation: \"fairy\"\n"
+  "default_animation: \"fairy_fly\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
@@ -119,6 +119,29 @@ embedded_components {
   "angular_damping: 0.0\n"
   "locked_rotation: false\n"
   "bullet: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "bzbz"
+  type: "sound"
+  data: "sound: \"/assests/sound/sources/Sound_effects/glitter.wav\"\n"
+  "looping: 1\n"
+  "group: \"master\"\n"
+  "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
+  "loopcount: 127\n"
   ""
   position {
     x: 0.0
