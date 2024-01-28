@@ -1,0 +1,11 @@
+function init(self)
+	msg.post("#sprite", "enable")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("display") then 
+		msg.post("#sprite", "enable")
+	elseif message_id == hash("not_display") then
+		msg.post("#sprite", "disable")
+	end
+end
