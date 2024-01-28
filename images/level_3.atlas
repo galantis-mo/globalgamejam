@@ -1,9 +1,9 @@
 images {
-  image: "/images/unsplash_forest_sebastian_unrau.jpg"
+  image: "/images/source/laser.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/source/laser.png"
+  image: "/images/source/LVL-3/16-9-NV2.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 animations {

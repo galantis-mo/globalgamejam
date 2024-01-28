@@ -1,0 +1,12 @@
+function init(self)
+	go.property("deleting", false)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("trigger_response") and message.other_id == hash("/fox_player") then
+		if self.deleting == false then
+			self.deleting = true
+			go.delete()
+		end
+	end
+end

@@ -1,3 +1,9 @@
 function init(self)
-	song.play("/background#level_1")
+	sound.play("#water")
+	sound.play("#level_1")
+end
+
+function final(self)
+	sound.stop("#water")
+	sound.stop("#level_1")
 end

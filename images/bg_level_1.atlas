@@ -6,6 +6,10 @@ images {
   image: "/images/source/LVL-1/16-9-NV1-woodstiks.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/images/source/instruments/piano.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

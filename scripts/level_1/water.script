@@ -1,0 +1,11 @@
+function init(self)
+	self.ploufer = false
+end
+
+function on_message(self, message_id, message, sender)
+	-- check if we received a contact point message
+	if message_id == hash("trigger_response") and not self.ploufer then
+		sound.play("#plouf")
+		self.ploufer = true
+	end
+end
