@@ -1,0 +1,14 @@
+function init(self)
+	self.enable = false
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("enable") then
+		self.enable = true
+	end
+	if message_id == hash("trigger_response") and message.other_id == hash("/fairy_player") and self.enable then
+		msg.post("#hidden", "enable")
+		msg.post("#display", "disable")
+		is_object_collected = true
+	end
+end
