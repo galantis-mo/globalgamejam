@@ -40,8 +40,8 @@ embedded_instances {
   "  }\n"
   "}\n"
   "components {\n"
-  "  id: \"menu\"\n"
-  "  component: \"/main/menu.gui\"\n"
+  "  id: \"instrument_managment\"\n"
+  "  component: \"/scripts/instrument_managment.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -139,60 +139,6 @@ embedded_instances {
     y: 0.0
     z: 0.0
     w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "particles"
-  data: "components {\n"
-  "  id: \"particles\"\n"
-  "  component: \"/images/light.particlefx\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "  property_decls {\n"
-  "  }\n"
-  "}\n"
-  "components {\n"
-  "  id: \"particles_script\"\n"
-  "  component: \"/scripts/particules.script\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "  property_decls {\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
-    x: 86.0
-    y: 718.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0959156
-    w: 0.99538946
   }
   scale3 {
     x: 1.0

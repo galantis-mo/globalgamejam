@@ -3,13 +3,13 @@ function init(self)
 	self.state = "no_level"
 	msg.post(".", "NEXT_LEVEL")
 	msg.post(".", "acquire_input_focus")
+	msg.post("/menu_interface", "disable")
 	
 end
 
 function on_message(self, message_id, message, sender)
 	-- Chargement & Déchargement des niveaux-----------------
 	if message_id == hash("NEXT_LEVEL") then
-		print("nyeh")
 		if self.state == "no_level" then 
 			msg.post("#tuto_proxy", "load")
 		elseif self.state == "tutorial_running" then
@@ -24,7 +24,8 @@ function on_message(self, message_id, message, sender)
 		end
 		
 	-- Rechargement des niveaux en cas de mort--------------
-	elseif message_id == hash("RESTART") then
+elseif message_id == hash("RESTART") then
+	print("RESTART")
 		if self.state == "tutorial_running" then
 			print("unload tuto")
 			msg.post("#tuto_proxy", "unload")
@@ -40,20 +41,6 @@ function on_message(self, message_id, message, sender)
 			msg.post("#lvl3_proxy", "load")
 		end
 		msg.post("/laugh_o_meter", "kill")
-
-	elseif message_id == hash("EXIT") then
-
-	elseif message_id == hash("CONTINUE") then
-		msg.post("#main_menu", "disable")
-		if self.state == "tutorial_running" then
-			msg.post("#tuto_proxy", "enable")
-		elseif self.state == "lvl1_running" then
-			msg.post("#lvl1_proxy", "enable")
-		elseif self.state == "lvl2_running" then
-			msg.post("#lvl2_proxy", "enable")
-		elseif self.state == "lvl3_running" then
-			msg.post("#lvl3_proxy", "enable")
-		end
 		
 	-- Vérification de chargement ---------------------------
 	elseif message_id == hash("proxy_loaded") then
@@ -76,7 +63,7 @@ function on_message(self, message_id, message, sender)
 			self.state = "lvl3_running"
 		end
 		
-	end   
+	end
 end
 
 -- Lecture des input clavier et souris
@@ -87,8 +74,7 @@ function on_input(self, action_id, action)
 		msg.post(".", "NEXT_LEVEL")
 
 	-- Action d'affichage du menu
-	elseif action_id == hash("menu") then
-		msg.post("#main_menu", "enable")
+	elseif action_id == hash("menu") then		
 		if self.state == "tutorial_running" then
 			msg.post("#tuto_proxy", "disable")
 		elseif self.state == "start_lvl1" then
